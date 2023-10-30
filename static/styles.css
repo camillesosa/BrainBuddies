@@ -12,6 +12,12 @@ header {
     background-color: rgba(250, 193, 193, 0.5);
 }
 
+.questionnaire {
+    overflow-y: scroll;
+    max-height: 800px;
+    float: center;
+}
+
 h1 {
   background-color: rgb(255, 255, 255);
   margin: 20px auto 20px auto;
