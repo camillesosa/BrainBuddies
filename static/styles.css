@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(250, 193, 193, 0.5);
+  background-color: #FEE8DD;
   padding-top: 20px;
   padding-bottom: 58px;
   
@@ -9,7 +9,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(250, 193, 193, 0.5);
+    background-color: #FEE8DD;
 }
 
 .questionnaire {
@@ -29,7 +29,7 @@ h1 {
   text-align: center;
   font-family: 'Roboto';
   font-size: 30px;
-  color: black;
+  color: #E17D52;
   padding-top: 20px;
   border: 1px solid lightgray;
 }
@@ -79,7 +79,7 @@ input[type="checkbox"] {
   margin-right: 0.8rem;
   transform: scale(1.3);
   margin-bottom: 10px;
-  accent-color: red;
+  accent-color: #E17D52;
   margin-top: 15px;
 }
 input[type="radio"] {
@@ -87,7 +87,7 @@ input[type="radio"] {
   margin-right: 0.8rem;
   margin-bottom: 10px;
   transform: scale(1.3);
-  accent-color: red;
+  accent-color: #E17D52;
   margin-top: 15px;
 }
 
@@ -103,7 +103,7 @@ a {
   margin-left: 681px;
   border-radius: 10px;
   font-family: 'Roboto';
-  color: red;
+  color: #E17D52;
   font-size: 14px;
   border: 1px solid lightgray;
   box-shadow: 0 2px 2px -2px black;
@@ -112,7 +112,7 @@ a {
 input[type=submit] {
   border-radius: 10px;
   color: white;
-  background-color: hotpink;
+  background-color: #E17D52;
   cursor: pointer;
   border: none;
   padding: 10px 14px;
