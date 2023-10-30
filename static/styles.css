@@ -12,6 +12,13 @@ header {
     background-color: #FEE8DD;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 .questionnaire {
     overflow-y: scroll;
     max-height: 85vh;
@@ -101,6 +108,18 @@ a {
   background-color: white;
   margin-top: 13px;
   margin-left: 681px;
+  border-radius: 10px;
+  font-family: 'Roboto';
+  color: #E17D52;
+  font-size: 14px;
+  border: 1px solid lightgray;
+  box-shadow: 0 2px 2px -2px black;
+}
+
+.navBar {
+  background-color: white;
+  margin-top: 13px;
+  margin-left: 0px;
   border-radius: 10px;
   font-family: 'Roboto';
   color: #E17D52;
