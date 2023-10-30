@@ -14,7 +14,7 @@ header {
 
 .questionnaire {
     overflow-y: scroll;
-    max-height: 800px;
+    max-height: 85vh;
     float: center;
 }
 
