@@ -1,16 +1,30 @@
 import csv
+from sys import platform
 
 
 data_stored = False
 data = []
+
+file_path_MacOS = 'tools/SampleData.csv'
+file_path_Windows = 'SampleData.csv'
+file_path = ''
 
 # Do not call this function, it is called automatically in this script
 # Open SampleData file store data into data variable
 def openSampleData():
     global data_stored
 
+    # Check OS for file path
+    if platform == "darwin":
+        file_path = file_path_MacOS
+    elif platform == "win32":
+        file_path = file_path_Windows
+    else:
+        print("ERROR: Operating system not supported for file open")
+        file_path = file_path_MacOS
+
     try:
-        with open('tools/SampleData.csv', 'r', encoding='utf-8-sig') as file:
+        with open(file_path, 'r', encoding='utf-8-sig') as file:
             csv_reader = csv.reader(file)
             data = [row for row in csv_reader]
             data_stored = True
