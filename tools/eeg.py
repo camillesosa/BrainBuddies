@@ -3,14 +3,12 @@ from neurosdk.sensor import Sensor
 from neurosdk.brainbit_sensor import BrainBitSensor
 from neurosdk.cmn_types import *
 import pickle
-import atexit
 
 
 from tools.logging import logger   
 
 
-# Global variable to store received data
-data_packets = []
+# User ID variables
 user_id = "temp"
 filename = f"user_{user_id}_data.pkl"
 
@@ -22,13 +20,10 @@ def on_sensor_state_changed(sensor, state):
 
 # Callback to handle received data
 def on_brain_bit_signal_data_received(sensor,data):
-    data_packets.extend(data)
-
-# Callback to save data to a pickle file when the script exits
-def save_data_to_pickle():
-    with open('brainbit_data.pkl', 'wb') as file:
-        pickle.dump(data_packets, file)
-    logger.debug(f'Data saved to {filename}')
+    with open(filename, 'ab') as file:
+        pickle.dump(data, file)
+    logger.debug(data)
+    logger.debug(f' saved to {filename}')
 
 logger.debug("Create Headband Scanner")
 gl_scanner = Scanner([SensorFamily.SensorLEBrainBit])
@@ -48,9 +43,6 @@ def sensorFound(scanner, sensors):
         del gl_scanner
 
 gl_scanner.sensorsChanged = sensorFound
-
-# Register a function to save the data when the script exits
-atexit.register(save_data_to_pickle)
 
 logger.debug("Start scan")
 gl_scanner.start()
