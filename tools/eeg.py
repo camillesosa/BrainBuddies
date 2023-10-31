@@ -22,8 +22,7 @@ def on_sensor_state_changed(sensor, state):
 def on_brain_bit_signal_data_received(sensor,data):
     with open(filename, 'ab') as file:
         pickle.dump(data, file)
-    logger.debug(data)
-    logger.debug(f' saved to {filename}')
+    logger.debug(f'{data} saved to {filename}')
 
 logger.debug("Create Headband Scanner")
 gl_scanner = Scanner([SensorFamily.SensorLEBrainBit])
