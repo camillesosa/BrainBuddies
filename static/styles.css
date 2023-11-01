@@ -60,7 +60,7 @@ h1 {
 
 progress {
     position: absolute;
-    left: 100vh;
+    left: 80vh;
 }
 
 .input-radio, .input-checkbox {
