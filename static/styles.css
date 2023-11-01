@@ -58,6 +58,11 @@ h1 {
   display: block;
 }
 
+progress {
+    position: absolute;
+    left: 100vh;
+}
+
 .input-radio, .input-checkbox {
   display: flex;
   flex-direction: column;
