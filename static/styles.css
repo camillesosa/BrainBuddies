@@ -14,7 +14,7 @@ header {
 
 nav {
     position: fixed;
-    top: 10;
+    top: 0;
     left: 0;
     width: 100%;
 }
@@ -23,6 +23,40 @@ nav {
     overflow-y: scroll;
     max-height: 85vh;
     float: center;
+}
+
+.left {
+    overflow-y: scroll;
+    max-height: 70vh;
+    position: fixed;
+    left: 25vh;
+    background-color: rgb(255, 255, 255);
+    margin: 20px auto 20px auto;
+    display: block;
+    width: 400px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Roboto';
+    color: #E17D52;
+    padding-top: 20px;
+    border: 1px solid lightgray;
+}
+
+.right {
+    overflow-y: scroll;
+    max-height: 70vh;
+    position: fixed;
+    right: 25vh;
+    background-color: rgb(255, 255, 255);
+    margin: 20px auto 20px auto;
+    display: block;
+    width: 400px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Roboto';
+    color: #E17D52;
+    padding-top: 20px;
+    border: 1px solid lightgray;
 }
 
 h1 {
