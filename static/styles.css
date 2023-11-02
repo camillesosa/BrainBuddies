@@ -59,6 +59,23 @@ nav {
     border: 1px solid lightgray;
 }
 
+.middle {
+    overflow-y: scroll;
+    max-height: 70vh;
+    position: fixed;
+    left: 50vh;
+    background-color: rgb(255, 255, 255);
+    margin: 20px auto 20px auto;
+    display: block;
+    width: 500px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Roboto';
+    color: #E17D52;
+    padding-top: 20px;
+    border: 1px solid lightgray;
+}
+
 h1 {
   background-color: rgb(255, 255, 255);
   margin: 20px auto 20px auto;
@@ -156,6 +173,18 @@ a {
   color: #E17D52;
   font-size: 14px;
   border: 1px solid lightgray;
+  box-shadow: 0 2px 2px -2px black;
+}
+
+.submit {
+  border-radius: 10px;
+  color: white;
+  background-color: #E17D52;
+  cursor: pointer;
+  border: none;
+  font-family: 'Roboto';
+  padding: 10px 14px;
+  font-size: 14px;
   box-shadow: 0 2px 2px -2px black;
 }
 
