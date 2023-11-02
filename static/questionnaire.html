@@ -1,19 +1,103 @@
 <!DOCTYPE html>
-<html>
-    <body style="background-color: #FEE8DD; text-align:center;">
-    <h1 style="color: #E17D52;">
-        Brain Buddies!
-    </h1>
-    <h3 style="color: #E17D52;">
-        Trying to link pages...  Currently need fix button arrangement and link isn't working for some reason
-    </h3>
-    <button onclick="window.open('/static/video.html');" target="_blank"> Video! </button>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxmJLrOGsBfxLDhuuV8kAHyZMX-hmKHwbFOHP8mPl5y8e_ag/viewform?embedded=true"
-            width="1800" height="800"
-            frameborder="0" marginheight="0"
-            align="center"
-            marginwidth="0">
-        Loading…
-    </iframe>
-    </body>
+<html lang="en">
+  <head>
+    <title>Survey Form</title>
+    <meta charset="utf-8"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  </head>
+  <body>
+
+  <div class="questionnaire">
+	  <br><br><br><br><br><br><br>
+    <form id="survey-form">
+      <section id="personal-info">
+        <section>
+        	<label id="name-label" for="name">Name<input class= "name-input" type="text" id="name" 
+        		placeholder="Enter your name" required /></label>
+      	</section>
+      	<section>
+        	<label id="number-label" for="number">Phone Number<input type="tel" id="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        		placeholder="000-000-0000" required /></label>
+      	</section>
+      </section>
+      <section id = "gender">
+        <section>
+        	<label>How would you describe your gender?</label>
+          	<section class="input-radio">
+      			<label><input type="radio" name="gender" value="female"/>Female</label>
+      			<label><input type="radio" name="gender" value="male"/>Male</label>
+     			<label><input type="radio" name="gender" value="non-binary"/>Non-binary</label>
+      			<label><input type="radio" name="gender" value="gender-fluid"/>Gender fluid</label>
+      			<label><input type="radio" name="gender" value="other"/>Other</label>
+      			<label><input type="radio" name="gender" value="prefer"/>Prefer not to say</label>
+      		</section>
+     	</section>
+     </section>
+     <section id = "age-range">
+       <section>
+      		<label for="age">What is your age range?</label>
+        	<section class="input-radio">
+        		<label><input type="radio" name="age" value="18-21"/>18-21</label>
+      	 		<label><input type="radio" name="age" value="22-27"/>22-27.</label>
+      			<label><input type="radio" name="age" value="28-34"/>28-34</label>
+      			<label><input type="radio" name="age" value="35-40"/>35-40</label>
+      			<label><input type="radio" name="age" value="41-50"/>41-50</label>
+      			<label><input type="radio" name="age" value="64"/>64+</label>
+        	</section>
+      </section>
+     </section>
+     <section id = "buddy-choice">
+     	<section>
+      		<label>Are you seeking a friend or more in your Brain Buddy?</label>
+      		<section class="input-radio">
+      			<label><input type="radio" name="buddy" value="friend" />Friend</label>
+      			<label><input type="radio" name="buddy" value="romantic-partner"/>Romantic partner</label>
+      			<label><input type="radio" name="buddy" value="either"/>Either</label>
+      		</section>
+      	</section>
+     </section>
+     <section id = "buddy-gender">
+     	<section>
+      		<label>Which gender would you like your Brain Buddy to identify as?</label><br>
+      		<label>Check all that apply.</label>
+      		<section class="input-checkbox">
+      			<label><input type="checkbox" value="bud-female"/>Female</label>
+      			<label><input type="checkbox" value="bud-male"/>Male</label>
+      			<label><input type="checkbox" value="bud-nonbinary"/>Non-binary</label>
+      			<label><input type="checkbox" value="bud-genderfluid"/>Gender fluid</label>
+      			<label><input type="checkbox" value="bud-other"/>Other</label>
+      			<label><input type="checkbox" value="bud-prefer"/>Prefer not to say</label>
+      		</section>
+      	</section>
+     </section>
+     <section id = "age-preferred">
+     	<section>
+       		<label>What age range would you like your Brain Buddy to be in?</label><br>
+       		<label>Check all that apply.</label>
+       		<section class="input-checkbox">
+      			<label><input type="checkbox" value="b18-21"/>18-21</label>
+      			<label><input type="checkbox" value="b22-27"/>22-27</label>
+      			<label><input type="checkbox" value="b28-34"/>28-34</label>
+      			<label><input type="checkbox" value="b35-40"/>35-40</label>
+      			<label><input type="checkbox" value="b41-50"/>41-50</label>
+      			<label><input type="checkbox" value="b64"/>64+</label>
+      		</section>
+      	</section>
+     </section>
+     <a href="hobbies.html" class="next">Next</a>
+    </form>
+  </div>
+  <header>
+	  <h1 id="title">Your Brain Buddy Profile!</h1>
+	  <label for="prog" style="position: absolute; left: 70vh">Progress:</label>
+	  <progress id="prog" value="25" max="100" style="text-align: center;"> 25% </progress>
+	  <br><br>
+  </header>
+  <nav>
+	  <a href="home.html" class="navBar">Home</a>
+	  <a href="faq.html" class="navBar">FAQ</a>
+	  <a href="contact.html" class="navBar">Contact Us</a>
+  </nav>
+  </body>
 </html>
