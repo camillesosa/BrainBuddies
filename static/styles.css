@@ -241,3 +241,8 @@ input[type="issue"] {
 	height: 200px;
 	width: 300px;
 }
+
+img {
+    width: 200px;
+    height: auto;
+}
