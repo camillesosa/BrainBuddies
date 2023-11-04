@@ -10,7 +10,6 @@ file_path_MacOS = 'tools/SampleData.csv'
 file_path_Windows = 'SampleData.csv'
 file_path = ''
 
-# Do not call this function, it is called automatically in this script
 # Open SampleData file store data into data variable
 def openSampleData():
     global data_stored
@@ -36,10 +35,18 @@ def openSampleData():
 
 # Returns a full row sample packet
 def getSamplePacket():
+    # Aquire data into data variable
+    if not data_stored:
+        data = openSampleData()
+
     return data[0]
 
 # Returns a cleaned up sample packet (first portion of data in the packet)
 def getCleanedSamplePacket():
+    # Aquire data into data variable
+    if not data_stored:
+        data = openSampleData()
+
     packet = data[0]            # Value is an array
     packet_string = packet[0]   # Value is the string inside the array (full packet data)
     
@@ -50,11 +57,7 @@ def getCleanedSamplePacket():
     return packet_string[start_index:end_index + 1]
 
 
-# Aquire data into data variable
-if not data_stored:
-    data = openSampleData()
-
-def parseUserData(user_id)
+def parseUserData(user_id):
     # Initialize variables to accumulate values
     o1_sum = 0
     o2_sum = 0
