@@ -1,6 +1,7 @@
 import csv
 from sys import platform
 import pickle
+import math
 
 
 data_stored = False
@@ -10,7 +11,6 @@ file_path_MacOS = 'tools/SampleData.csv'
 file_path_Windows = 'SampleData.csv'
 file_path = ''
 
-# Do not call this function, it is called automatically in this script
 # Open SampleData file store data into data variable
 def openSampleData():
     global data_stored
@@ -36,10 +36,18 @@ def openSampleData():
 
 # Returns a full row sample packet
 def getSamplePacket():
+    # Aquire data into data variable
+    if not data_stored:
+        data = openSampleData()
+
     return data[0]
 
 # Returns a cleaned up sample packet (first portion of data in the packet)
 def getCleanedSamplePacket():
+    # Aquire data into data variable
+    if not data_stored:
+        data = openSampleData()
+
     packet = data[0]            # Value is an array
     packet_string = packet[0]   # Value is the string inside the array (full packet data)
     
@@ -50,11 +58,7 @@ def getCleanedSamplePacket():
     return packet_string[start_index:end_index + 1]
 
 
-# Aquire data into data variable
-if not data_stored:
-    data = openSampleData()
-
-def parseUserData(user_id)
+def parseUserData(user_id):
     # Initialize variables to accumulate values
     o1_sum = 0
     o2_sum = 0
@@ -109,3 +113,20 @@ def parseUserData(user_id)
         # print(f"Average T4: {t4_avg}")
     else:
         print("No data available to calculate averages.")
+
+# User matching using euclidean distance ( user_data_x is a list for averages [O1, O2, T3, T4] )
+def calculate_user_match(user_data_1, user_data_2):
+    # Calculate difference between both users data
+    o1_difference = user_data_1[0] - user_data_2[0] 
+    o2_difference = user_data_1[1] - user_data_2[1]
+    t3_difference = user_data_1[2] - user_data_2[2]
+    t4_difference = user_data_1[3] - user_data_2[3]
+
+    # Calculate euclidean distance using difference calculations 
+    euclidean_distance = math.sqrt( (o1_difference)**2 + 
+                                    (o2_difference)**2 +
+                                    (t3_difference)**2 +
+                                    (t4_difference)**2 )
+    
+    # lower distance = better match 
+    return euclidean_distance
