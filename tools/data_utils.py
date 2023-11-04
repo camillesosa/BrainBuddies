@@ -1,6 +1,7 @@
 import csv
 from sys import platform
 import pickle
+import math
 
 
 data_stored = False
@@ -112,3 +113,20 @@ def parseUserData(user_id):
         # print(f"Average T4: {t4_avg}")
     else:
         print("No data available to calculate averages.")
+
+# User matching using euclidean distance ( user_data_x is a list for averages [O1, O2, T3, T4] )
+def calculate_user_match(user_data_1, user_data_2):
+    # Calculate difference between both users data
+    o1_difference = user_data_1[0] - user_data_2[0] 
+    o2_difference = user_data_1[1] - user_data_2[1]
+    t3_difference = user_data_1[2] - user_data_2[2]
+    t4_difference = user_data_1[3] - user_data_2[3]
+
+    # Calculate euclidean distance using difference calculations 
+    euclidean_distance = math.sqrt( (o1_difference)**2 + 
+                                    (o2_difference)**2 +
+                                    (t3_difference)**2 +
+                                    (t4_difference)**2 )
+    
+    # lower distance = better match 
+    return euclidean_distance
