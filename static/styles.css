@@ -29,7 +29,7 @@ nav {
     overflow-y: scroll;
     max-height: 70vh;
     position: fixed;
-    left: 25vh;
+    left: 25vw;
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
@@ -46,7 +46,7 @@ nav {
     overflow-y: scroll;
     max-height: 70vh;
     position: fixed;
-    right: 25vh;
+    right: 25vw;
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
@@ -63,7 +63,7 @@ nav {
     overflow-y: scroll;
     max-height: 70vh;
     position: fixed;
-    left: 30vh;
+    left: 29vw;
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
@@ -111,7 +111,7 @@ h1 {
 
 progress {
     position: absolute;
-    left: 80vh;
+    left: 50vw;
 }
 
 .input-radio, .input-checkbox {
