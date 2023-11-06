@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-	     <script src="https://code.jquery.com/jquery-3.6.0.js" 
+		<meta charset="utf-8"/>
+    	<link href="styles.css" rel="stylesheet"/>
+    	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"
 		     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -19,11 +22,24 @@
 		}
 	</script>
 
-
-	<video id="video" width="320" height="240" controls>
-		  <source src="movie.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-	</video>
+	<div style="position: absolute; top: 40vh; left: 42vw">
+		<video id="video" width="320" height="240" controls>
+		  	<source src="movie.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+		</video>
+		<a href="finish.html" class="submit" style="position: absolute; top: 50vh; left: 40vh">Finish!</a>
+	</div>
+	<header>
+    	<h1 id="title">Your Brain Buddy Profile!</h1>
+		<label for="prog" style="position: absolute; left: 40vw">Progress:</label>
+		<progress id="prog" value="75" max="100" style="text-align: center;"> 75% </progress>
+		<br><br>
+	</header>
+	<nav>
+	  <a href="home.html" class="navBar">Home</a>
+	  <a href="faq.html" class="navBar">FAQ</a>
+	  <a href="contact.html" class="navBar">Contact Us</a>
+	</nav>
 
 
 	<script>

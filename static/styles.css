@@ -29,7 +29,7 @@ nav {
     overflow-y: scroll;
     max-height: 70vh;
     position: fixed;
-    left: 25vh;
+    left: 25vw;
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
@@ -46,7 +46,7 @@ nav {
     overflow-y: scroll;
     max-height: 70vh;
     position: fixed;
-    right: 25vh;
+    right: 25vw;
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
@@ -63,11 +63,11 @@ nav {
     overflow-y: scroll;
     max-height: 70vh;
     position: fixed;
-    left: 50vh;
+    left: 29vw;
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
-    width: 500px;
+    width: 800px;
     border-radius: 8px;
     text-align: center;
     font-family: 'Roboto';
@@ -111,7 +111,7 @@ h1 {
 
 progress {
     position: absolute;
-    left: 80vh;
+    left: 50vw;
 }
 
 .input-radio, .input-checkbox {
@@ -209,4 +209,40 @@ input[type=submit] {
   padding: 10px 14px;
   font-size: 14px;
   box-shadow: 0 2px 2px -2px black;
+}
+
+input[type="name"] {
+    background-color: white;
+    color: black;
+    border-color: #E17D52;
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+input[type="email"] {
+    background-color: white;
+    color: black;
+    border-color: #E17D52;
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 5px;
+	margin-top: 10px;
+}
+
+input[type="issue"] {
+    background-color: white;
+    color: black;
+    border-color: #E17D52;
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 5px;
+	margin-top: 10px;
+	height: 200px;
+	width: 300px;
+}
+
+img {
+    width: 200px;
+    height: auto;
 }
