@@ -2,6 +2,8 @@ import csv
 from sys import platform
 import pickle
 import math
+import os
+import json
 
 
 data_stored = False
@@ -130,3 +132,112 @@ def calculate_user_match(user_data_1, user_data_2):
     
     # lower distance = better match 
     return euclidean_distance
+
+# Return list of subdirectories from a root directory
+def get_subdirectories(root_dir):
+    subdir = []
+
+    # Go through each file/folder in the root directory
+    for item in os.listdir(root_dir):
+        # Check if the item is a sub-directory
+        full_path = os.path.join(root_dir, item)
+        if os.path.isdir(full_path):
+            subdir.append(item)
+
+    return subdir
+
+# Returns data from pkl file (check for file exist done before function call)
+def get_data_from_pkl(pkl_path):
+    pkl_data = None
+
+    with open(pkl_path, 'rb') as file:
+            pkl_data = pickle.load(file)
+
+    return pkl_data
+
+# Create json file to save matches if not already created
+def create_matches_json():
+    path_to_json = os.path.join('user_data', 'user_matches.json')
+    
+    # Create empty json if doesnt exist
+    if not os.path.exists(path_to_json):
+        matches = {}
+
+        # Write the empty dictionary to the file
+        with open(path_to_json, 'w') as file:
+            json.dump(matches, file)
+
+# Loads existing matches from json and returns them as dictionary
+def load_existing_matches():
+    path_to_json = os.path.join('user_data', 'user_matches.json')
+    matches = {}
+
+    # Create empty json if doesnt exist
+    if os.path.exists(path_to_json):
+        with open(path_to_json, 'r') as file:
+            matches = json.load(file)
+    else:
+        print("ERROR: JSON does not exists ", path_to_json)
+        return None
+    
+    return matches
+
+# Add a match to the json dictionary
+def add_to_matches(matches, cur_user_id, another_user):
+    # Check if cur_user_id is existing as a key
+    if cur_user_id in matches:
+        # Check if the other user is already in the matches set to avoid adding duplicates
+        if another_user not in matches[cur_user_id]:
+            matches[cur_user_id].append(another_user)  # Add to list of users (matches)
+    else:
+        # Create a new set for this user_id
+        matches[cur_user_id] = [another_user]
+
+# Save the matches dictionary to the matches json
+def save_matches_to_json(matches):
+    path_to_json = os.path.join('user_data', 'user_matches.json')
+
+    # Write the updated dictionary back to the file
+    with open(path_to_json, 'w') as file:
+        json.dump(matches, file, indent=4)
+
+# Function will go through other users data to find matches for current user
+def find_user_matches(current_user_id):
+    root_directory = 'user_data'
+    subdir = get_subdirectories(root_directory)
+    
+    current_user_data_path = os.path.join(root_directory, current_user_id, f'{current_user_id}_parsed.pkl')
+    current_user_data = None
+    
+    create_matches_json()   # Create json file to save matches if not already created
+    existing_matches = load_existing_matches()  # Load existing saved matches dict from json
+
+    # Check if current user has parsed data
+    if os.path.exists(current_user_data_path):
+        # Save current user's data
+        current_user_data = get_data_from_pkl(current_user_data_path)
+    else:
+        print("ERROR: Current user path, ", current_user_data_path, " not found.")
+        return None
+ 
+    # Loop through each subdir in user_data directory ( user_id is a subdirectory name )
+    for other_user_id in subdir:
+        # Create full path to user parsed data
+        other_user_path = os.path.join(root_directory, other_user_id, f'{other_user_id}_parsed.pkl')
+
+        # Run calculation to find matches
+        if os.path.exists(other_user_path) and other_user_id != current_user_id:
+            other_user_data = get_data_from_pkl(other_user_path) # get other user's data
+
+            # Call function to calculate euclidean distance between both users
+            euclidean_distance = calculate_user_match(current_user_data, other_user_data)
+
+            # If criteria for a match is met add the match
+            if euclidean_distance < 0.5:
+                add_to_matches(existing_matches, current_user_id, other_user_id)
+
+        elif other_user_id != current_user_id:
+            print("ERROR: ", other_user_path, " not found.")
+
+    # saves all changes back to user_matches.json
+    save_matches_to_json(existing_matches) 
