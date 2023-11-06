@@ -33,7 +33,7 @@ nav {
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
-    width: 400px;
+    width: 21vw;
     border-radius: 8px;
     text-align: center;
     font-family: 'Roboto';
@@ -50,7 +50,7 @@ nav {
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
-    width: 400px;
+    width: 21vw;
     border-radius: 8px;
     text-align: center;
     font-family: 'Roboto';
@@ -110,7 +110,7 @@ h1 {
 }
 
 progress {
-    position: absolute;
+    position: fixed;
     left: 50vw;
 }
 
