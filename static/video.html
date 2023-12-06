@@ -19,6 +19,8 @@
 					//this gets called if the server throws an error
 					console.log("error");
 				console.log(response);});
+		function play_stop(){
+			console.log("Paused or Stopped");
 		}
 	</script>
 
@@ -45,6 +47,8 @@
 	<script>
 		video.addEventListener("play", (event) => {
 			play_start();
+		video.addEventListener("pause", (event) => {
+			play_stop();
 		});
 	</script>
 
