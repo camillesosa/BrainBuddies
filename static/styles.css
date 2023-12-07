@@ -246,3 +246,14 @@ img {
     width: 200px;
     height: auto;
 }
+
+.form-container {
+    background-color: rgb(255, 255, 255);
+    width: 800px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Roboto';
+    color: #E17D52;
+    padding-top: 20px;
+    border: 1px solid lightgray;
+}

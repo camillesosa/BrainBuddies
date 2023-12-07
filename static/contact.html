@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Survey Form</title>
-    <meta charset="utf-8"/>
-    <link href="styles.css" rel="stylesheet"/>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-  </head>
-  <body>
+<head>
+  <title>Survey Form</title>
+  <meta charset="utf-8">
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
   <br><br><br><br><br><br>
-  <div class="middle" style="overflow-y: hidden">
-    <h2 style="text-align: center; color: #E17D52;"> Contact Us
-    </h2>
-    <hr>
-    <br><br>
-    <div class="text-entry" style="height: 300px; overflow-y: hidden">
-    <form>
-      <label style="position: fixed; left: 35vw; top: 35vh" for="name">Name:</label>
-      <input type="name" id="name" name="name" style="position: fixed; left: 32vw; top: 38vh">
-      <label style="position: fixed; left: 35vw; top: 45vh" for="email">Email:</label>
-      <input type="email" id="email" name="email" style="position: fixed; left: 32vw; top: 48vh">
-      <div class="text-entry" style="height: 300px;">
-        <label style="position: fixed; right: 40vw; top: 30vh;" for="issue">Issue:</label>
-        <input type="issue" id="issue" name="issue" style="position: fixed; right: 32vw; top: 33vh; overflow-y: scroll">
-      </div>
-      <button type="submit" style="position: fixed; left: 49vw; top: 58vh">Submit</button>
-    </form>
-    </div>
-  </div>
-  <img src="imgs/CScontact.png" style="width: 400px; height: auto; position: fixed; left: 8vw; top: 14vh"/>
-  <header>
-    <h1 style="color: #E17D52;">
-        Brain Buddies!
-    </h1>
-  </header>
-  <nav>
-	  <a href="home.html" class="navBar">Home</a>
-	  <a href="faq.html" class="navBar">FAQ</a>
-	  <a href="contact.html" class="navBar">Contact Us</a>
-  </nav>
-  </body>
-</html>
+  <div class="content-container" style="display: flex; flex-direction: row-reverse; justify-content: center;">
 
+<div class="hidden-spacer" style="opacity:0;">
+  <img src="imgs/CScontact.png" style="width:600px; height:auto;">
+</div>
+
+      <div class="form-container">
+        <div class="form-header" style="padding-bottom: 19px;">
+          <h2 style="text-align: center; color: #E17D52;"> Contact Us</h2>
+          <hr>
+        </div>
+        <form>
+          <br><br>
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
+          <div class="contact-form" style="display: flex; flex-direction: column;">
+          <div class="form-name">
+            <label for="name">Name:</label>
+            <input type="name" id="name" name="name" style="margin-top: 15px; margin-bottom: 30px;">
+          </div>
+          <div class="form-email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" style="margin-top: 15px;">
+          </div>
+        </div>
+        <div class="text-entry" style="display: flex; flex-direction: column; margin-bottom: 30px;">
+        <label for="issue" style="margin-top: 30px;">Issue:</label>
+        <input type="issue" id="issue" name="issue" style="margin-top: 15px;">
+      </div>
+    </div>
+    <button type="submit" style="margin-bottom: 15px;">Submit</button>
+  </form>
+</div>
+<div class="buddy-icon" style="position: relative; height: 300px; margin-top: 0px;">
+  <img src="imgs/CScontact.png" style="width:600px; height:auto;">
+</div>
+
+
+
+<header style="">
+  <h1 style="color: #E17D52;">
+    Brain Buddies!
+  </h1>
+</header>
+<nav>
+  <a href="home.html" class="navBar">Home</a>
+  <a href="faq.html" class="navBar">FAQ</a>
+  <a href="contact.html" class="navBar">Contact Us</a>
+</nav>
+</div></body></html>
