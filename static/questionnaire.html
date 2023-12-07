@@ -10,6 +10,16 @@
   <div class="buddy-icon" style="position: absolute; bottom: 50px; left: 10px; margin-top: 0px;">
 	<img src="imgs/CSform.png" style="width: 600px; height: auto;"/>
   </div>
+  <script>
+  // Function to handle storing phone number
+  function storePhoneNumber() {
+    // Get the phone number from the input field
+    var phoneNumber = document.getElementById('number').value;
+
+    // Store the phone number in local storage
+    localStorage.setItem('userPhoneNumber', phoneNumber);
+  }
+</script>
   <div class="questionnaire" style="position: relative;">
 	  <br><br><br><br><br><br><br>
     <form id="survey-form">
@@ -87,7 +97,7 @@
       		</section>
       	</section>
      </section>
-     <a href="hobbies.html" class="next">Next</a>
+     <a href="hobbies.html" class="next" onclick="storePhoneNumber()">Next</a>
     </form>
   </div>
   <header>
