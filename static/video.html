@@ -22,6 +22,20 @@
 		}
 	</script>
 
+	<script>
+		function play_stop(){
+			$.post("/open_api/stop_movie", { "data":"somedata", "any":"data"},
+				function(data, textStatus) {
+					//this gets called when browser receives response from server
+					console.log(data);
+				}, "json").fail( function(response) {
+					//this gets called if the server throws an error
+					console.log("error");
+				console.log(response);});
+		}
+		
+	</script>
+
 	<div style="position: fixed; top: 30vh; left: 42vw">
 		<video id="video" width="320" height="240" controls>
 		  	<source src="movie.mp4" type="video/mp4">
@@ -45,6 +59,9 @@
 	<script>
 		video.addEventListener("play", (event) => {
 			play_start();
+		});
+		video.addEventListener("pause", (event) => {
+			play_stop();
 		});
 	</script>
 
