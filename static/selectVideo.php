@@ -13,19 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         foreach ($selectedHobbies as $hobby) {
             // Increment the corresponding video tag for certain hobbies
-            if ($hobby == 'anime' || 'cosplay' || 'larping' || 'videogames') {
+            if ($hobby == 'anime' || $hobby == 'cosplay' || $hobby == 'larping' || $hobby == 'videogames') {
                 $animeGamesVideo = $animeGamesVideo + 1;
             }
-            if ($hobby == 'arts-crafts' || 'collecting' || 'fashion' || 'photography') {
+            if ($hobby == 'arts-crafts' || $hobby == 'collecting' || $hobby == 'fashion' || $hobby == 'photography') {
                 $artsVideo = $artsVideo + 1;
             }
-            if ($hobby == 'dancing' || 'exercise' || 'outdoors') {
+            if ($hobby == 'dancing' || $hobby == 'exercise' || $hobby == 'outdoors') {
                 $outdoorsVideo = $outdoorsVideo + 1;
             }
-            if ($hobby == 'sports' || 'extreme-sports') {
+            if ($hobby == 'sports' || $hobby == 'extreme-sports') {
                 $sportsVideo = $sportsVideo + 1;
             }
-            if ($hobby == 'food' || 'gardening' || 'literature' || 'movies' || 'music') {
+            if ($hobby == 'food' || $hobby == 'gardening' || $hobby == 'literature' || $hobby == 'movies' || $hobby == 'music') {
                 $foodMusicVideo = $foodMusicVideo + 1;
             }
         }
@@ -39,19 +39,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         foreach ($selectedBudHobbies as $bhobby) {
             // Increment the corresponding video tag for certain hobbies
-            if ($bhobby == 'banime' || 'bcosplay' || 'blarping' || 'bvideogames') {
+            if ($bhobby == 'banime' || $bhobby == 'bcosplay' || $bhobby == 'blarping' || $bhobby == 'bvideogames') {
                 $animeGamesVideo = $animeGamesVideo + 1;
             }
-            if ($bhobby == 'barts-crafts' || 'bcollecting' || 'bfashion' || 'bphotography') {
+            if ($bhobby == 'barts-crafts' || $bhobby == 'bcollecting' || $bhobby == 'bfashion' || $bhobby == 'bphotography') {
                 $artsVideo = $artsVideo + 1;
             }
-            if ($bhobby == 'bdancing' || 'bexercise' || 'boutdoors') {
+            if ($bhobby == 'bdancing' || $bhobby == 'bexercise' || $bhobby == 'boutdoors') {
                 $outdoorsVideo = $outdoorsVideo + 1;
             }
-            if ($bhobby == 'bsports' || 'bextreme-sports') {
+            if ($bhobby == 'bsports' || $bhobby == 'bextreme-sports') {
                 $sportsVideo = $sportsVideo + 1;
             }
-            if ($bhobby == 'bfood' || 'bgardening' || 'bliterature' || 'bmovies' || 'bmusic') {
+            if ($bhobby == 'bfood' || $bhobby == 'bgardening' || $bhobby == 'bliterature' || $bhobby == 'bmovies' || $bhobby == 'bmusic') {
                 $foodMusicVideo = $foodMusicVideo + 1;
             }
         }
