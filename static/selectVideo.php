@@ -77,12 +77,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
+    // Prepare insert statement
+    $sql = "INSERT INTO users (video) VALUES $selectedVideo";
 
+    // Attempt to execute the prepared statement
+    $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    if ($mysqli->connect_error){
+	    die("Connection failed: ".$mysqli->connect_error);
+    }
+	$stmt = $mysqli->prepare($sql);
+    //Attempt to execute the prepared statement
+    if($stmt->execute()){
+        header("location: video.html");
+    } else{
+		header("location: error.html");
+		echo "Oops! Something went wrong. Please try again later.";
+    }
 
-
-
-    // Prepare a select statement
-    $sql = "INSERT INTO users VALUES (name, phone, gender, age, seeking, seekGender, seekAge) = ?";
-
+    $mysqli->close();
 
 ?>
