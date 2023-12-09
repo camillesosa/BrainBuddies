@@ -27,6 +27,11 @@ $seekAge = trim($_POST["bud-age"]);     // might have to do this one differently
 	$stmt = $mysqli->prepare($sql);
              //Attempt to execute the prepared statement
             if($stmt->execute()){
+                // Start a session
+                session_start();
+                // Using phonenumber as the user id
+                $_SESSION["user_id"] = $phone;
+
                 // Redirect to next page
                 header("location: /hobbies.html");
             } else{

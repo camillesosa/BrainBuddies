@@ -16,7 +16,16 @@
 	<script>
 		// Retrieve the phone number from local storage
 		var userPhoneNumber = localStorage.getItem('userPhoneNumber');
+		// You might want to instead pull from the sql db or even just use a session
+		// I'll put the php code below for using the session variable user_id
 	</script>
+	<?php
+		// Getting the phone number from the session
+		if(isset($_SESSION['user_id'])){
+	        $userPhoneNumber = "{$_SESSION['user_id']}";
+		}
+		// Now you can use $userPhoneNumber 
+	?>
 
 	<script>
 		function play_start(){
