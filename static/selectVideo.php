@@ -1,6 +1,7 @@
 <?php
 // Include config file
-require_once "config.php";
+//require_once "config.php";
+//$phone = $_SESSION["phone"];
 
 // Define variables and initialize with empty values
 $animeGamesVideo = $artsVideo = $foodMusicVideo = $outdoorsVideo = $sportsVideo = 0;
@@ -75,25 +76,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $selectedVideo = 'sportsVideo';
     }
 
+    header("location: $selectedVideo.html");
+    exit();
 }
+    // If for whatever reason we couldn't get any responses from the last page
+    // Direct the user to the video with the largest variety of content
+    $selectedVideo = 'foodMusicVideo';
+    header("location: $selectedVideo.html")
+
+
+    // If we want to add to the db
 
     // Prepare insert statement
-    $sql = "INSERT INTO users (video) VALUES $selectedVideo";
+    //$sql = "INSERT INTO users (video) VALUES $selectedVideo WHERE phone = $phone";
 
     // Attempt to execute the prepared statement
-    $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-    if ($mysqli->connect_error){
-	    die("Connection failed: ".$mysqli->connect_error);
-    }
-	$stmt = $mysqli->prepare($sql);
+    //$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    //if ($mysqli->connect_error){
+	//    die("Connection failed: ".$mysqli->connect_error);
+    //}
+	//$stmt = $mysqli->prepare($sql);
     //Attempt to execute the prepared statement
-    if($stmt->execute()){
-        header("location: video.html");
-    } else{
-		header("location: error.html");
-		echo "Oops! Something went wrong. Please try again later.";
-    }
+    //if($stmt->execute()){
+    //    header("location: video.html");
+    //} else{
+	//	header("location: error.html");
+	//	echo "Oops! Something went wrong. Please try again later.";
+    //}
 
-    $mysqli->close();
+    //$mysqli->close();
 
 ?>
