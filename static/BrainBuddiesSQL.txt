@@ -1,0 +1,1 @@
+CREATE TABLE users ( name VARCHAR(25), phone VARCHAR(12), gender VARCHAR(12), age VARCHAR(5), seeking VARCHAR(20), seekGender VARCHAR(12), seekAge VARCHAR(5), video VARCHAR(250));
