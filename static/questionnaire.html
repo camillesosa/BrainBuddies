@@ -25,11 +25,11 @@
     <form id="survey-form" action="newProfile.php" method="post">
       <section id="personal-info">
         <section>
-        	<label id="name-label" for="name">Name<input class= "name-input" type="text" id="name" 
+        	<label id="name-label" for="name">Name<input class= "name-input" type="text" id="name" name="name"
         		placeholder="Enter your name" required /></label>
       	</section>
       	<section>
-        	<label id="number-label" for="number">Phone Number<input type="tel" id="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        	<label id="number-label" for="number">Phone Number<input type="tel" id="number" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         		placeholder="000-000-0000" required /></label>
       	</section>
       </section>
@@ -74,12 +74,12 @@
       		<label>Which gender would you like your Brain Buddy to identify as?</label><br>
       		<label>Check all that apply.</label>
       		<section class="input-checkbox">
-      			<label><input type="checkbox" value="bud-female"/>Female</label>
-      			<label><input type="checkbox" value="bud-male"/>Male</label>
-      			<label><input type="checkbox" value="bud-nonbinary"/>Non-binary</label>
-      			<label><input type="checkbox" value="bud-genderfluid"/>Gender fluid</label>
-      			<label><input type="checkbox" value="bud-other"/>Other</label>
-      			<label><input type="checkbox" value="bud-prefer"/>Prefer not to say</label>
+      			<label><input type="checkbox" name="bud-gender" value="bud-female"/>Female</label>
+      			<label><input type="checkbox" name="bud-gender" value="bud-male"/>Male</label>
+      			<label><input type="checkbox" name="bud-gender" value="bud-nonbinary"/>Non-binary</label>
+      			<label><input type="checkbox" name="bud-gender" value="bud-genderfluid"/>Gender fluid</label>
+      			<label><input type="checkbox" name="bud-gender" value="bud-other"/>Other</label>
+      			<label><input type="checkbox" name="bud-gender" value="bud-prefer"/>Prefer not to say</label>
       		</section>
       	</section>
      </section>
@@ -88,12 +88,12 @@
        		<label>What age range would you like your Brain Buddy to be in?</label><br>
        		<label>Check all that apply.</label>
        		<section class="input-checkbox">
-      			<label><input type="checkbox" value="b18-21"/>18-21</label>
-      			<label><input type="checkbox" value="b22-27"/>22-27</label>
-      			<label><input type="checkbox" value="b28-34"/>28-34</label>
-      			<label><input type="checkbox" value="b35-40"/>35-40</label>
-      			<label><input type="checkbox" value="b41-50"/>41-50</label>
-      			<label><input type="checkbox" value="b64"/>64+</label>
+      			<label><input type="checkbox" name="bud-age" value="b18-21"/>18-21</label>
+      			<label><input type="checkbox" name="bud-age" value="b22-27"/>22-27</label>
+      			<label><input type="checkbox" name="bud-age" value="b28-34"/>28-34</label>
+      			<label><input type="checkbox" name="bud-age" value="b35-40"/>35-40</label>
+      			<label><input type="checkbox" name="bud-age" value="b41-50"/>41-50</label>
+      			<label><input type="checkbox" name="bud-age" value="b64"/>64+</label>
       		</section>
       	</section>
      </section>
