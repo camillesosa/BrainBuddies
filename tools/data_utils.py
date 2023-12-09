@@ -183,15 +183,17 @@ def load_existing_matches():
     return matches
 
 # Add a match to the json dictionary
-def add_to_matches(matches, cur_user_id, another_user):
+def add_to_matches(matches, cur_user_id, another_user, euclidean_distance):
     # Check if cur_user_id is existing as a key
     if cur_user_id in matches:
-        # Check if the other user is already in the matches set to avoid adding duplicates
-        if another_user not in matches[cur_user_id]:
-            matches[cur_user_id].append(another_user)  # Add to list of users (matches)
+        # The other user is being added or if already exists, euclidean is updated
+        matches[cur_user_id][another_user] = euclidean_distance  # Add to list of users (matches)
     else:
-        # Create a new set for this user_id
-        matches[cur_user_id] = [another_user]
+        # Create a new dictionary for this user_id
+        matches[cur_user_id] = {}
+        # Add other user as a match
+        matches[cur_user_id][another_user] = euclidean_distance
+
 
 # Save the matches dictionary to the matches json
 def save_matches_to_json(matches):
@@ -233,8 +235,8 @@ def find_user_matches(current_user_id):
             euclidean_distance = calculate_user_match(current_user_data, other_user_data)
 
             # If criteria for a match is met add the match
-            if euclidean_distance < 0.5:
-                add_to_matches(existing_matches, current_user_id, other_user_id)
+            if euclidean_distance < 5:
+                add_to_matches(existing_matches, current_user_id, other_user_id, euclidean_distance)
 
         elif other_user_id != current_user_id:
             print("ERROR: ", other_user_path, " not found.")
