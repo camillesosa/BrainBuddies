@@ -65,24 +65,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If there is a tie, it'll pick the video it encounters first
     if ($maxValue == $animeGamesVideo) {
-        $selectedVideo = 'animeGamesVideo';
+        $selectedVideo = 'https://drive.google.com/file/d/1xftpshM86mTpsQ4IxKOPX93Y-8b9lO2n/view?usp=sharing';
     } elseif ($maxValue == $artsVideo) {
-        $selectedVideo = 'artsVideo';
+        $selectedVideo = 'https://drive.google.com/file/d/17yc3D8WUNrNz9vbMtPUw_ZXv5uDUbwyP/view?usp=sharing';
     } elseif ($maxValue == $foodMusicVideo) {
-        $selectedVideo = 'foodMusicVideo';
+        $selectedVideo = 'https://drive.google.com/file/d/123XCpOxNLH7s-78-W9AWK7U8ms951gs9/view?usp=sharing';
     } elseif ($maxValue == $outdoorsVideo) {
-        $selectedVideo = 'outdoorsVideo';
+        $selectedVideo = 'https://drive.google.com/file/d/1baB41Y09g5bv8SKQoeDKrLWjVIQw55pU/view?usp=sharing';
     } elseif ($maxValue == $sportsVideo) {
-        $selectedVideo = 'sportsVideo';
+        $selectedVideo = 'https://drive.google.com/file/d/17MvVL7FuRC51_0hX_qpxwMyOpEkU11rR/view?usp=sharing';
     }
 
-    header("location: $selectedVideo.html");
+    //header("location: $selectedVideo.html");
+    header("location: video.html?video=" . urlencode($selectedVideo));
     exit();
 }
     // If for whatever reason we couldn't get any responses from the last page
     // Direct the user to the video with the largest variety of content
-    $selectedVideo = 'foodMusicVideo';
-    header("location: $selectedVideo.html")
+    $selectedVideo = 'https://drive.google.com/file/d/123XCpOxNLH7s-78-W9AWK7U8ms951gs9/view?usp=sharing';
+    //header("location: $selectedVideo.html");
+    header("location: video.html?video=" . urlencode($selectedVideo));
 
 
     // If we want to add to the db
