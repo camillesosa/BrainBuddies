@@ -77,14 +77,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //header("location: $selectedVideo.html");
-    header("location: video.html?video=" . urlencode($selectedVideo));
+    header("location: video.php?video=" . urlencode($selectedVideo));
     exit();
 }
     // If for whatever reason we couldn't get any responses from the last page
     // Direct the user to the video with the largest variety of content
     $selectedVideo = 'https://drive.google.com/file/d/123XCpOxNLH7s-78-W9AWK7U8ms951gs9/view?usp=sharing';
     //header("location: $selectedVideo.html");
-    header("location: video.html?video=" . urlencode($selectedVideo));
+    header("location: video.php?video=" . urlencode($selectedVideo));
 
 
     // If we want to add to the db
