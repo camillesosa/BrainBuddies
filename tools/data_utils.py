@@ -69,8 +69,10 @@ def parseUserData(user_id):
     sample_count = 0
 
     user_id = 'temp'
+
+    create_user_directory(user_id)  # Creating user directory if it has not been created
     in_filename = f"{user_id}_raw.pkl" # Will change to User ID specific file when connection to front end is made
-    out_filename = f"user_data\{user_id}_parsed.pkl"
+    out_filename = os.path.join("user_data", user_id, f"{user_id}_parsed.pkl")
     #in_filename = "SampleData.pkl" # Comment in for debug purposes
 
     # Edit this in to print the data
@@ -243,3 +245,8 @@ def find_user_matches(current_user_id):
 
     # saves all changes back to user_matches.json
     save_matches_to_json(existing_matches) 
+
+# Creating a new user directory, user_id is a string
+def create_user_directory(user_id):
+    path_to_user_dir = os.path.join('user_data', user_id)
+    os.makedirs(path_to_user_dir, exist_ok=True)    # If directory already exists, it will not be replaced
