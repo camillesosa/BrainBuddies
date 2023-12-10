@@ -23,7 +23,7 @@ $seekAge = $_POST["bud-age"];     // changed the checkbox input into radio to ma
     // Attempt to execute the prepared statement
     $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
     if ($mysqli->connect_error){
-	die("Connection failed: ".$mysqli->connect_error);
+	    die("Connection failed: ".$mysqli->connect_error);
     }
 	$stmt = $mysqli->prepare($sql);
              //Attempt to execute the prepared statement
@@ -37,12 +37,9 @@ $seekAge = $_POST["bud-age"];     // changed the checkbox input into radio to ma
                 header("location: hobbies.html");
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
-		header("location: error.html");
+		        header("location: error.html");
             }
 
     $mysqli->close();
-    }
 
-    // Close connection
-    mysqli_close($link);
 ?>
