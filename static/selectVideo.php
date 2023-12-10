@@ -65,15 +65,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If there is a tie, it'll pick the video it encounters first
     if ($maxValue == $animeGamesVideo) {
-        $selectedVideo = 'https://drive.google.com/file/d/1xftpshM86mTpsQ4IxKOPX93Y-8b9lO2n/view?usp=sharing';
+        $selectedVideo = "https://www.youtube.com/embed/IlvRSdPFkTs";
     } elseif ($maxValue == $artsVideo) {
-        $selectedVideo = 'https://drive.google.com/file/d/17yc3D8WUNrNz9vbMtPUw_ZXv5uDUbwyP/view?usp=sharing';
+        $selectedVideo = "https://www.youtube.com/embed/ZH4-xIJ5lbw";
     } elseif ($maxValue == $foodMusicVideo) {
-        $selectedVideo = 'https://drive.google.com/file/d/123XCpOxNLH7s-78-W9AWK7U8ms951gs9/view?usp=sharing';
+        $selectedVideo = "https://www.youtube.com/embed/JRC_AFDL-WU";
     } elseif ($maxValue == $outdoorsVideo) {
-        $selectedVideo = 'https://drive.google.com/file/d/1baB41Y09g5bv8SKQoeDKrLWjVIQw55pU/view?usp=sharing';
+        $selectedVideo = "https://www.youtube.com/embed/uJfh34LhPeo";
     } elseif ($maxValue == $sportsVideo) {
-        $selectedVideo = 'https://drive.google.com/file/d/17MvVL7FuRC51_0hX_qpxwMyOpEkU11rR/view?usp=sharing';
+        $selectedVideo = "https://www.youtube.com/embed/JidVq2Mk7Is";
     }
 
     //header("location: $selectedVideo.html");
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
     // If for whatever reason we couldn't get any responses from the last page
     // Direct the user to the video with the largest variety of content
-    $selectedVideo = 'https://drive.google.com/file/d/123XCpOxNLH7s-78-W9AWK7U8ms951gs9/view?usp=sharing';
+    $selectedVideo = "https://www.youtube.com/embed/JRC_AFDL-WU";
     //header("location: $selectedVideo.html");
     header("location: video.php?video=" . urlencode($selectedVideo));
 
