@@ -71,33 +71,33 @@
      </section>
      <section id = "buddy-gender">
      	<section>
-      		<label>Which gender would you like your Brain Buddy to identify as?</label><br>
-      		<label>Check all that apply.</label>
-      		<section class="input-checkbox">
-      			<label><input type="checkbox" name="bud-gender" value="bud-female"/>Female</label>
-      			<label><input type="checkbox" name="bud-gender" value="bud-male"/>Male</label>
-      			<label><input type="checkbox" name="bud-gender" value="bud-nonbinary"/>Non-binary</label>
-      			<label><input type="checkbox" name="bud-gender" value="bud-genderfluid"/>Gender fluid</label>
-      			<label><input type="checkbox" name="bud-gender" value="bud-other"/>Other</label>
-      			<label><input type="checkbox" name="bud-gender" value="bud-prefer"/>Prefer not to say</label>
+      		<label>Which gender would you like your Brain Buddy to identify as?</label>
+      		<section class="input-radio">
+      			<label><input type="radio" name="bud-gender" value="bud-female"/>Female</label>
+      			<label><input type="radio" name="bud-gender" value="bud-male"/>Male</label>
+      			<label><input type="radio" name="bud-gender" value="bud-nonbinary"/>Non-binary</label>
+      			<label><input type="radio" name="bud-gender" value="bud-genderfluid"/>Gender fluid</label>
+      			<label><input type="radio" name="bud-gender" value="bud-other"/>Other</label>
+      			<label><input type="radio" name="bud-gender" value="bud-prefer"/>Prefer not to say</label>
       		</section>
       	</section>
      </section>
      <section id = "age-preferred">
      	<section>
-       		<label>What age range would you like your Brain Buddy to be in?</label><br>
-       		<label>Check all that apply.</label>
-       		<section class="input-checkbox">
-      			<label><input type="checkbox" name="bud-age" value="b18-21"/>18-21</label>
-      			<label><input type="checkbox" name="bud-age" value="b22-27"/>22-27</label>
-      			<label><input type="checkbox" name="bud-age" value="b28-34"/>28-34</label>
-      			<label><input type="checkbox" name="bud-age" value="b35-40"/>35-40</label>
-      			<label><input type="checkbox" name="bud-age" value="b41-50"/>41-50</label>
-      			<label><input type="checkbox" name="bud-age" value="b64"/>64+</label>
+       		<label>What age range would you like your Brain Buddy to be in?</label>
+       		<section class="input-radio">
+      			<label><input type="radio" name="bud-age" value="b18-21"/>18-21</label>
+      			<label><input type="radio" name="bud-age" value="b22-27"/>22-27</label>
+      			<label><input type="radio" name="bud-age" value="b28-34"/>28-34</label>
+      			<label><input type="radio" name="bud-age" value="b35-40"/>35-40</label>
+      			<label><input type="radio" name="bud-age" value="b41-50"/>41-50</label>
+      			<label><input type="radio" name="bud-age" value="b64"/>64+</label>
       		</section>
       	</section>
      </section>
-     <a href="newProfile.php" class="next" onclick="storePhoneNumber()">Next</a>
+		<input type="submit" name="next" value="Next"></input>
+
+     <!-- <a href="newProfile.php" class="next" onclick="storePhoneNumber()">Next</a> -->
     </form>
   </div>
   <header>
