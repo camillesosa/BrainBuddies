@@ -57,14 +57,11 @@
 
 	<div class="content-container" style="display: flex; flex-direction: row-reverse; justify-content: center;">
 		<div style="position: absolute; top: 200px;">
-		<video id="video" width="320" height="240" controls>
-		<?php
-		    echo "<source src='$videoLink' type='video/mp4'>";
-		?>
-				Your browser does not support the video tag.
-		</video>
+		<iframe id="video" width="540" height="345" src = "<?php echo $videoLink; ?>" frameborder="0" allow = "accelerometer; autoplay" allowfullscreen>
+			</iframe>
+			<br><br>			
+			<a href="finish.html" class="submit">Finish!</a>
 		</div>
-		<a href="finish.html" class="submit" style="position: absolute; top: 500px; right: 40vw;">Finish!</a>
 	</div>
 	<header>
     	<h1 id="title">Your Brain Buddy Profile!</h1>
