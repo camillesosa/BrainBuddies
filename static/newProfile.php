@@ -34,10 +34,10 @@ $seekAge = $_POST["bud-age"];     // changed the checkbox input into radio to ma
                 $_SESSION["user_id"] = $phone;
 
                 // Redirect to next page
-                header("location: /hobbies.html");
+                header("location: hobbies.html");
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
-		header("location: /error.html");
+		header("location: error.html");
             }
 
     $mysqli->close();

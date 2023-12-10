@@ -24,7 +24,7 @@
 		if(isset($_SESSION['user_id'])){
 	        $userPhoneNumber = "{$_SESSION['user_id']}";
 		}
-		// Now you can use $userPhoneNumber 
+		// Now you can use $userPhoneNumber
 	?>
 
 	<script>
