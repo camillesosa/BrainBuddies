@@ -8,11 +8,12 @@ $seekGender = $seekAge = "";
 
 $name = trim($_POST["name"]);
 $phone = trim($_POST["phone"]);
-$gender = trim($_POST["gender"]);       // might have to do this one differently
+$gender = trim($_POST["gender"]);       // input type radio should be ok with this method
 $age = trim($_POST["age"]);
-$seeking = trim($_POST["buddy"]);     // might have to do this one differently
-$seekGender = trim($_POST["bud-gender"]);   // might have to do this one differently
-$seekAge = trim($_POST["bud-age"]);     // might have to do this one differently
+$seeking = trim($_POST["buddy"]);     // input type radio should be ok with this method
+
+$seekGender = $_POST["bud-gender"];   // changed the checkbox input into radio to make this simpler
+$seekAge = $_POST["bud-age"];     // changed the checkbox input into radio to make this simpler
 
 
     // Prepare a select statement
