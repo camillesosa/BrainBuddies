@@ -22,7 +22,7 @@ $selectedVideo = "";
             if ($hobby == 'dancing' || $hobby == 'exercise' || $hobby == 'outdoors') {
                 $outdoorsVideo = $outdoorsVideo + 1;
             }
-            if ($hobby == 'sports' || $hobby == 'extreme-sports') {
+            if ($hobby == 'sports' || $hobby == 'extreme-sports' || $hobby == 'winter-sports') {
                 $sportsVideo = $sportsVideo + 1;
             }
             if ($hobby == 'food' || $hobby == 'gardening' || $hobby == 'literature' || $hobby == 'movies' || $hobby == 'music') {
@@ -48,7 +48,7 @@ $selectedVideo = "";
             if ($bhobby == 'bdancing' || $bhobby == 'bexercise' || $bhobby == 'boutdoors') {
                 $outdoorsVideo = $outdoorsVideo + 1;
             }
-            if ($bhobby == 'bsports' || $bhobby == 'bextreme-sports') {
+            if ($bhobby == 'bsports' || $bhobby == 'bextreme-sports' || $bhobby == 'bwinter-sports') {
                 $sportsVideo = $sportsVideo + 1;
             }
             if ($bhobby == 'bfood' || $bhobby == 'bgardening' || $bhobby == 'bliterature' || $bhobby == 'bmovies' || $bhobby == 'bmusic') {
