@@ -65,17 +65,17 @@ $selectedVideo = "";
    // If there are no responses, pick video with largest variety
     // If there is a tie, the first video encountered will be played
     if($maxValue == 0){
-        $selectedVideo = "https://www.youtube.com/embed/JRC_AFDL-WU";
+        $selectedVideo = "https://www.youtube.com/embed/E3EPxmCSk4U";
     } else if ($maxValue == $animeGamesVideo) {
-        $selectedVideo = "https://www.youtube.com/embed/IlvRSdPFkTs";
+        $selectedVideo = "https://www.youtube.com/embed/umEHO6h5-3M";
     } elseif ($maxValue == $artsVideo) {
-        $selectedVideo = "https://www.youtube.com/embed/ZH4-xIJ5lbw";
+        $selectedVideo = "https://www.youtube.com/embed/f8AtKjU57UU";
     } elseif ($maxValue == $foodMusicVideo) {
-        $selectedVideo = "https://www.youtube.com/embed/JRC_AFDL-WU";
+        $selectedVideo = "https://www.youtube.com/embed/E3EPxmCSk4U";
     } elseif ($maxValue == $outdoorsVideo) {
-        $selectedVideo = "https://www.youtube.com/embed/uJfh34LhPeo";
+        $selectedVideo = "https://www.youtube.com/embed/cEi1ChHgSYI";
     } elseif ($maxValue == $sportsVideo) {
-        $selectedVideo = "https://www.youtube.com/embed/JidVq2Mk7Is";
+        $selectedVideo = "https://www.youtube.com/embed/oreUwS1AWFM";
     }
 
     //header("location: $selectedVideo.html");
