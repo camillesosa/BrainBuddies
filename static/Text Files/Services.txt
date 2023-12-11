@@ -1,0 +1,1 @@
+BrainBuddies is a social website that takes in user information manually and from the brain to match you with people who think similarly to you. Within BrainBuddies, you will be able to build your profile with preferences, watch videos to gather information, and connect with people!
