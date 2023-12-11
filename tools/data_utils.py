@@ -236,8 +236,8 @@ def find_user_matches(current_user_id):
             # Call function to calculate euclidean distance between both users
             euclidean_distance = calculate_user_match(current_user_data, other_user_data)
 
-            # If criteria for a match is met add the match
-            if euclidean_distance < 5:
+            # If criteria for a match is met and it is not a rejected match, add the match
+            if euclidean_distance < 5 and not is_rejected_match(current_user_id, other_user_id):
                 add_to_matches(existing_matches, current_user_id, other_user_id, euclidean_distance)
 
         elif other_user_id != current_user_id:
@@ -250,3 +250,99 @@ def find_user_matches(current_user_id):
 def create_user_directory(user_id):
     path_to_user_dir = os.path.join('user_data', user_id)
     os.makedirs(path_to_user_dir, exist_ok=True)    # If directory already exists, it will not be replaced
+
+#
+#   Reject User utils
+#
+
+# Allowing a user to reject a match
+def reject_match(user_id, user_to_reject_id):
+    # Create json to save rejected matches if not already created
+    create_rejected_matches_json() 
+
+    # Load existing rejected matches from json
+    rejected_matches = load_existing_rejected_matches()  
+
+    # Add the new rejected matches to variable
+    add_to_rejected_matches(rejected_matches, user_id, user_to_reject_id)
+
+    # Saved rejected matches variable to json
+    save_rejected_matches_to_json(rejected_matches)
+
+    # Update matches json based on the rejection
+    update_matches_from_reject(user_id, user_to_reject_id)
+
+# Check rejected_matches.json to see if a user is rejected or other user rejected current user,return bool
+def is_rejected_match(user1_id, user2_id):
+    rejected_matches = load_existing_rejected_matches()
+    if user2_id in rejected_matches.get(user1_id, []) or user1_id in rejected_matches.get(user2_id, []):
+        return True
+    else:
+        return False
+
+# Removes the match from both users    
+def update_matches_from_reject(user1_id, user2_id):
+    matches = load_existing_matches()
+
+    # Check if user is a key
+    if user1_id in matches:
+        # Check if user to be removed is an existing value
+        if user2_id in matches[user1_id]:
+            matches[user1_id].pop(user2_id)
+    
+    # Check if user is a key
+    if user2_id in matches:
+        # Check if user to be removed is an existing value
+        if user1_id in matches[user2_id]:
+            matches[user2_id].pop(user1_id)
+    
+    save_matches_to_json(matches)
+
+
+
+# Create json file to save rejected matches if not already created
+def create_rejected_matches_json():
+    path_to_json = os.path.join('user_data', 'rejected_matches.json')
+    
+    # Create empty json if doesnt exist
+    if not os.path.exists(path_to_json):
+        rejected_matches = {}
+
+        # Write the empty dictionary to the file
+        with open(path_to_json, 'w') as file:
+            json.dump(rejected_matches, file)
+
+# Loads existing rejected matches from json and returns them as dictionary
+def load_existing_rejected_matches():
+    path_to_json = os.path.join('user_data', 'rejected_matches.json')
+    rejected_matches = {}
+
+    # Create empty json if doesnt exist
+    if os.path.exists(path_to_json):
+        with open(path_to_json, 'r') as file:
+            rejected_matches = json.load(file)
+    else:
+        print("ERROR: JSON does not exists ", path_to_json)
+        return None
+    
+    return rejected_matches
+
+# Add a rejected_match to the json dictionary
+def add_to_rejected_matches(rejected_matches, cur_user_id, rejected_user):
+    # Check if cur_user_id is existing as a key
+    if cur_user_id in rejected_matches:
+        # Check if rejection already exists
+        if rejected_user not in rejected_matches[cur_user_id]:
+            # The other user is being added or if exists nothing changes
+            rejected_matches[cur_user_id].append(rejected_user)
+    else:
+        # Add other user as a rejected_match
+        rejected_matches[cur_user_id] = [rejected_user]
+
+# Save the rejected matches dictionary to the matches json
+def save_rejected_matches_to_json(rejected_matches):
+    path_to_json = os.path.join('user_data', 'rejected_matches.json')
+
+    # Write the updated dictionary back to the file
+    with open(path_to_json, 'w') as file:
+        json.dump(rejected_matches, file, indent=4)
