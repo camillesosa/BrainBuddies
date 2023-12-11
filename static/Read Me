@@ -1,0 +1,14 @@
+How to run the website without running into problems with PHP support:
+
+1) Download XAMPP (or any php service)
+2) Go to system settings > search enviroment variables
+3) At the bottom go to ...Enviroment Variables
+4) Click 'Path' in the second bottom window under System
+5) Click Add
+6) Put the path to E:\XAMPP\php
+7) Test going into powershell by doing php -v (if you see the version, it's working)
+8) In powershell, cd to the folder which contains the BrainBuddies files
+9) Type in powershell: php -S localhost:8000
+10) Then in your browser run localhost:8000/home.html
+
+Note: Make sure you are running the local sql db as well, or you'll encounter error pages (I use MAMP)
