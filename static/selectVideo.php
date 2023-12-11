@@ -7,7 +7,6 @@
 $animeGamesVideo = $artsVideo = $foodMusicVideo = $outdoorsVideo = $sportsVideo = 0;
 $selectedVideo = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['hobbies'])) {
         // Get the selected hobbies
         $selectedHobbies = $_POST['hobbies'];
@@ -63,8 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Compare the int video values and pick the highest one
     $maxValue = max($animeGamesVideo, $artsVideo, $foodMusicVideo, $outdoorsVideo, $sportsVideo);
 
-    // If there is a tie, it'll pick the video it encounters first
-    if ($maxValue == $animeGamesVideo) {
+   // If there are no responses, pick video with largest variety
+    // If there is a tie, the first video encountered will be played
+    if($maxValue == 0){
+        $selectedVideo = "https://www.youtube.com/embed/JRC_AFDL-WU";
+    } else if ($maxValue == $animeGamesVideo) {
         $selectedVideo = "https://www.youtube.com/embed/IlvRSdPFkTs";
     } elseif ($maxValue == $artsVideo) {
         $selectedVideo = "https://www.youtube.com/embed/ZH4-xIJ5lbw";
@@ -79,12 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //header("location: $selectedVideo.html");
     header("location: video.php?video=" . urlencode($selectedVideo));
     exit();
-}
-    // If for whatever reason we couldn't get any responses from the last page
-    // Direct the user to the video with the largest variety of content
-    $selectedVideo = "https://www.youtube.com/embed/JRC_AFDL-WU";
-    //header("location: $selectedVideo.html");
-    header("location: video.php?video=" . urlencode($selectedVideo));
 
 
     // If we want to add to the db
