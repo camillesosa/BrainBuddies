@@ -9,7 +9,7 @@
     </h1>
   </header>
   <br><br><br><br><br><br>
-  <div class="content-container" style="display: flex; flex-direction: row-reverse; justify-content: center;">
+  <div class="content-container" style="display: flex; flex-direction: row-reverse; justify-content: center;" id="jsonContainer">
 
               <div style="
               background-color: white;
@@ -30,5 +30,27 @@
   <a href="matches.html" class="navBar">Matches</a>
 </nav>
 
+<script>
+  // URL of the JSON file
+  var jsonFileUrl = 'https://raw.githubusercontent.com/camillesosa/BrainBuddies/main/user_data/user_matches.json';
+
+  // Function to fetch and load JSON data
+  function loadJson() {
+      fetch(jsonFileUrl)
+          .then(response => response.json())
+          .then(data => {
+              // Process the loaded JSON data
+              console.log('Loaded JSON data:', data);
+
+              // Display data in the container
+              var jsonContainer = document.getElementById('jsonContainer');
+              jsonContainer.textContent = JSON.stringify(data, null, 2);
+          })
+          .catch(error => console.error('Error loading JSON:', error));
+  }
+
+  // Call the function to load JSON when the page loads
+  loadJson();
+</script>
 
 </body></html>
