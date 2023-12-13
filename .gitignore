@@ -3,3 +3,5 @@ tools/__pycache__/
 __pycache__/
 .DS_Store
 .vscode/settings.json
+user_data/user_matches.json
+user_data/rejected_matches.json
