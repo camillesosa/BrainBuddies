@@ -29,7 +29,7 @@ nav {
     overflow-y: scroll;
     max-height: 70vh;
     position: fixed;
-    left: 25vw;
+    left: 20vw;
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
@@ -46,7 +46,7 @@ nav {
     overflow-y: scroll;
     max-height: 70vh;
     position: fixed;
-    right: 25vw;
+    right: 20vw;
     background-color: rgb(255, 255, 255);
     margin: 20px auto 20px auto;
     display: block;
